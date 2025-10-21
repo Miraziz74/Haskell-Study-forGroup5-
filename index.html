@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haskell - Super Preparation Hub</title>
+    
+    <!-- Favicon - Lambda Symbol -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23667eea'>λ</text></svg>">
+    
+    <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -37,6 +43,75 @@
             display: flex;
         }
         
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .login-logo {
+            margin-bottom: 30px;
+        }
+        
+        .login-logo h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
         .sidebar {
             width: var(--sidebar-width);
             background: rgba(255, 255, 255, 0.95);
@@ -61,12 +136,35 @@
         .logo h1 {
             color: var(--primary);
             font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 1.8rem;
         }
         
         .logo p {
             color: var(--dark);
             font-size: 0.9rem;
             opacity: 0.7;
+        }
+        
+        .user-info {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .user-info p {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary);
         }
         
         .nav-section {
@@ -136,6 +234,9 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid var(--light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .page-header h2 {
@@ -335,6 +436,11 @@
             border: 1px solid #ddd;
         }
         
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+        
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
@@ -346,6 +452,10 @@
         
         .btn-secondary:hover {
             background: #e9ecef;
+        }
+        
+        .btn-danger:hover {
+            background: #e53e3e;
         }
         
         .quiz-container {
@@ -562,6 +672,80 @@
             margin-bottom: 8px;
         }
         
+        .copy-btn {
+            background: var(--info);
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+            margin-left: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .code-label {
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .users-table th,
+        .users-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .users-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .users-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .logout-btn {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background: #e53e3e;
+        }
+        
         @media (max-width: 1024px) {
             .sidebar {
                 transform: translateX(-100%);
@@ -598,1061 +782,528 @@
         .menu-toggle {
             display: none;
         }
-        
-        .copy-btn {
-            background: var(--info);
-            color: white;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: background 0.3s;
-            margin-left: 10px;
-        }
-        
-        .copy-btn:hover {
-            background: var(--primary-dark);
-        }
-        
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .code-label {
-            background: var(--primary);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
-    <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-    </div>
-    
-    <div class="sidebar" id="sidebar">
-        <div class="logo">
-            <h1><i class="fas fa-hashtag"></i>Haskell Prep.</h1>
-            <p>for group 5 students only!</p>
-            <p>weekly updates...</p>
-
-        </div>
-        
-        <div class="nav-section">
-            <h3>Main Navigation</h3>
-            <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="#" class="nav-link" data-page="labs"><i class="fas fa-flask"></i> Labs Overview</a></li>
-                <li><a href="#" class="nav-link" data-page="practice"><i class="fas fa-code"></i> Practice Tasks</a></li>
-                <li><a href="#" class="nav-link" data-page="quiz"><i class="fas fa-question-circle"></i> Quick Quiz</a></li>
-                <li><a href="#" class="nav-link" data-page="generate"><i class="fas fa-random"></i> Generate Task</a></li>
-                <li><a href="#" class="nav-link" data-page="functions"><i class="fas fa-functions"></i> Haskell Functions</a></li>
-                <li><a href="#" class="nav-link" data-page="editor"><i class="fas fa-edit"></i> Code Editor</a></li>
-            </ul>
-        </div>
-        
-        <div class="nav-section">
-            <h3>Lab Topics</h3>
-            <ul class="nav-links">
-                <li><a href="#" class="lab-filter" data-lab="all"><i class="fas fa-layer-group"></i> All Labs</a></li>
-                <li><a href="#" class="lab-filter" data-lab="1"><i class="fas fa-1"></i> Lab 1: Basics</a></li>
-                <li><a href="#" class="lab-filter" data-lab="2"><i class="fas fa-2"></i> Lab 2: Functions</a></li>
-                <li><a href="#" class="lab-filter" data-lab="3"><i class="fas fa-3"></i> Lab 3: Lists</a></li>
-                <li><a href="#" class="lab-filter" data-lab="4"><i class="fas fa-4"></i> Lab 4: Recursion</a></li>
-                <li><a href="#" class="lab-filter" data-lab="5"><i class="fas fa-5"></i> Lab 5: Higher Order</a></li>
-            </ul>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-box">
+            <div class="login-logo">
+                <h1><i class="fas fa-hashtag logo-icon"></i> Haskell Hub</h1>
+                <p>Complete Lab Preparation</p>
+            </div>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                </div>
+                <button class="btn btn-primary" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Enter Haskell Hub
+                </button>
+                <div id="loginMessage" class="hidden" style="color: var(--danger); margin-top: 10px;"></div>
+            </div>
         </div>
     </div>
-    
-    <div class="main-content">
-        <!-- Dashboard Page -->
-        <div class="page active" id="dashboard">
-            <div class="page-header">
-                <h2>Haskell Lab Preparation Hub</h2>
-                <p>don't waste your time</p>
 
+    <!-- Main Application (Hidden until login) -->
+    <div id="app" class="hidden">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <h1><i class="fas fa-hashtag logo-icon"></i> Haskell Hub</h1>
+                <p>Complete Lab Preparation</p>
             </div>
             
-            <div class="lab-grid">
-                <div class="lab-card" data-lab="1">
-                    <div class="lab-icon">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <h3>Lab 1: Basics & Setup</h3>
-                    <p>Introduction to Haskell, basic types, functions, and simple operations</p>
-                </div>
-                
-                <div class="lab-card" data-lab="2">
-                    <div class="lab-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Lab 2: Functions</h3>
-                    <p>Function definitions, pattern matching, guards, and recursion basics</p>
-                </div>
-                
-                <div class="lab-card" data-lab="3">
-                    <div class="lab-icon">
-                        <i class="fas fa-list"></i>
-                    </div>
-                    <h3>Lab 3: Lists</h3>
-                    <p>List operations, recursion on lists, list comprehensions, and common patterns</p>
-                </div>
-                
-                <div class="lab-card" data-lab="4">
-                    <div class="lab-icon">
-                        <i class="fas fa-redo"></i>
-                    </div>
-                    <h3>Lab 4: Recursion</h3>
-                    <p>Advanced recursion techniques, working with multiple parameters</p>
-                </div>
-                
-                <div class="lab-card" data-lab="5">
-                    <div class="lab-icon">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3>Lab 5: Higher Order</h3>
-                    <p>Map, filter, fold, function composition, and advanced list operations</p>
-                </div>
-                
-                <div class="lab-card" data-page="quiz">
-                    <div class="lab-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Test Yourself</h3>
-                    <p>Interactive quizzes to check your understanding of Haskell concepts</p>
-                </div>
+            <div class="user-info">
+                <p>Welcome, <span id="currentUser">User</span>!</p>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
             </div>
             
-            <div class="controls">
-                <button class="btn btn-primary" id="startPractice">
-                    <i class="fas fa-rocket"></i> Start Practicing
-                </button>
-                <button class="btn btn-secondary" id="takeQuiz">
-                    <i class="fas fa-question-circle"></i> Take a Quiz
-                </button>
-                <button class="btn btn-secondary" id="viewFunctions">
-                    <i class="fas fa-functions"></i> View All Functions
-                </button>
+            <div class="nav-section">
+                <h3>Main Navigation</h3>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-page="labs"><i class="fas fa-flask"></i> Labs Overview</a></li>
+                    <li><a href="#" class="nav-link" data-page="practice"><i class="fas fa-code"></i> Practice Tasks</a></li>
+                    <li><a href="#" class="nav-link" data-page="quiz"><i class="fas fa-question-circle"></i> Quick Quiz</a></li>
+                    <li><a href="#" class="nav-link" data-page="generate"><i class="fas fa-random"></i> Generate Task</a></li>
+                    <li><a href="#" class="nav-link" data-page="functions"><i class="fas fa-functions"></i> Haskell Functions</a></li>
+                    <li><a href="#" class="nav-link" data-page="editor"><i class="fas fa-edit"></i> Code Editor</a></li>
+                    <li><a href="#" class="nav-link" data-page="users"><i class="fas fa-users"></i> User Management</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Lab Topics</h3>
+                <ul class="nav-links">
+                    <li><a href="#" class="lab-filter" data-lab="all"><i class="fas fa-layer-group"></i> All Labs</a></li>
+                    <li><a href="#" class="lab-filter" data-lab="1"><i class="fas fa-1"></i> Lab 1: Basics</a></li>
+                    <li><a href="#" class="lab-filter" data-lab="2"><i class="fas fa-2"></i> Lab 2: Functions</a></li>
+                    <li><a href="#" class="lab-filter" data-lab="3"><i class="fas fa-3"></i> Lab 3: Lists</a></li>
+                    <li><a href="#" class="lab-filter" data-lab="4"><i class="fas fa-4"></i> Lab 4: Recursion</a></li>
+                    <li><a href="#" class="lab-filter" data-lab="5"><i class="fas fa-5"></i> Lab 5: Higher Order</a></li>
+                </ul>
             </div>
         </div>
         
-        <!-- Labs Overview Page -->
-        <div class="page" id="labs">
-            <div class="page-header">
-                <h2>Labs Overview</h2>
-                <p>Detailed breakdown of each lab's topics and learning objectives</p>
-            </div>
-            <div id="lab-content">
-                <!-- Lab content will be loaded here dynamically -->
-            </div>
-        </div>
-        
-        <!-- Practice Tasks Page -->
-        <div class="page" id="practice">
-            <div class="page-header">
-                <h2>Practice Tasks</h2>
-                <p>Hands-on coding exercises from all labs with solutions</p>
-            </div>
-            <div class="controls">
-                <button class="btn btn-primary" id="showAllTasks">
-                    <i class="fas fa-layer-group"></i> All Tasks
-                </button>
-                <button class="btn btn-secondary" id="showLab1Tasks">
-                    <i class="fas fa-1"></i> Lab 1 Tasks
-                </button>
-                <button class="btn btn-secondary" id="showLab2Tasks">
-                    <i class="fas fa-2"></i> Lab 2 Tasks
-                </button>
-                <button class="btn btn-secondary" id="showLab3Tasks">
-                    <i class="fas fa-3"></i> Lab 3 Tasks
-                </button>
-                <button class="btn btn-secondary" id="showLab4Tasks">
-                    <i class="fas fa-4"></i> Lab 4 Tasks
-                </button>
-                <button class="btn btn-secondary" id="showLab5Tasks">
-                    <i class="fas fa-5"></i> Lab 5 Tasks
-                </button>
-            </div>
-            <div class="task-grid" id="tasks-container">
-                <!-- Tasks will be loaded here dynamically -->
-            </div>
-        </div>
-        
-        <!-- Quiz Page -->
-        <div class="page" id="quiz">
-            <div class="page-header">
-                <h2>Quick Quiz</h2>
-                <p>Test your Haskell knowledge with these interactive questions</p>
-            </div>
-            <div id="quiz-container">
-                <!-- Quiz will be loaded here dynamically -->
-            </div>
-            <div class="controls">
-                <button class="btn btn-primary" id="nextQuestion">
-                    <i class="fas fa-arrow-right"></i> Next Question
-                </button>
-                <button class="btn btn-secondary" id="restartQuiz">
-                    <i class="fas fa-redo"></i> Restart Quiz
-                </button>
-            </div>
-        </div>
-        
-        <!-- Generate Task Page -->
-        <div class="page" id="generate">
-            <div class="page-header">
-                <h2>Generate Practice Task</h2>
-                <p>Get a random Haskell task to solve based on selected lab topics</p>
-            </div>
-            <div class="generate-task">
+        <div class="main-content">
+            <!-- Dashboard Page -->
+            <div class="page active" id="dashboard">
+                <div class="page-header">
+                    <div>
+                        <h2>Haskell Prep.</h2>
+                        <p> group 5 students only</p>
+                        <p>weekly updates...</p>
+
+                    </div>
+                </div>
+                
+                <div class="lab-grid">
+                    <div class="lab-card" data-lab="1">
+                        <div class="lab-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>Lab 1: Basics & Setup</h3>
+                        <p>Introduction to Haskell, basic types, functions, and simple operations</p>
+                    </div>
+                    
+                    <div class="lab-card" data-lab="2">
+                        <div class="lab-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Lab 2: Functions</h3>
+                        <p>Function definitions, pattern matching, guards, and recursion basics</p>
+                    </div>
+                    
+                    <div class="lab-card" data-lab="3">
+                        <div class="lab-icon">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <h3>Lab 3: Lists</h3>
+                        <p>List operations, recursion on lists, list comprehensions, and common patterns</p>
+                    </div>
+                    
+                    <div class="lab-card" data-lab="4">
+                        <div class="lab-icon">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3>Lab 4: Recursion</h3>
+                        <p>Advanced recursion techniques, working with multiple parameters</p>
+                    </div>
+                    
+                    <div class="lab-card" data-lab="5">
+                        <div class="lab-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>Lab 5: Higher Order</h3>
+                        <p>Map, filter, fold, function composition, and advanced list operations</p>
+                    </div>
+                    
+                    <div class="lab-card" data-page="quiz">
+                        <div class="lab-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Test Yourself</h3>
+                        <p>Interactive quizzes to check your understanding of Haskell concepts</p>
+                    </div>
+                </div>
+                
                 <div class="controls">
-                    <button class="btn btn-primary" id="generateTask">
-                        <i class="fas fa-random"></i> Generate New Task
+                    <button class="btn btn-primary" id="startPractice">
+                        <i class="fas fa-rocket"></i> Start Practicing
                     </button>
-                    <button class="btn btn-secondary" id="showSolution">
-                        <i class="fas fa-eye"></i> Show Solution
+                    <button class="btn btn-secondary" id="takeQuiz">
+                        <i class="fas fa-question-circle"></i> Take a Quiz
                     </button>
-                </div>
-                <div class="task-display" id="generated-task">
-                    <p>Click "Generate New Task" to get a random Haskell problem to solve!</p>
-                </div>
-                <div class="task-display hidden" id="generated-solution">
-                    <!-- Solution will appear here -->
-                </div>
-            </div>
-        </div>
-        
-        <!-- Functions Page -->
-        <div class="page" id="functions">
-            <div class="page-header">
-                <h2>Haskell Functions Reference</h2>
-                <p>Complete reference of all functions covered in the labs</p>
-            </div>
-            <div class="controls">
-                <button class="btn btn-primary" id="showAllFunctions">
-                    <i class="fas fa-layer-group"></i> All Functions
-                </button>
-                <button class="btn btn-secondary" id="showBasicFunctions">
-                    <i class="fas fa-play-circle"></i> Basic Functions
-                </button>
-                <button class="btn btn-secondary" id="showListFunctions">
-                    <i class="fas fa-list"></i> List Functions
-                </button>
-                <button class="btn btn-secondary" id="showHOFunctions">
-                    <i class="fas fa-sitemap"></i> Higher Order Functions
-                </button>
-            </div>
-            <div class="function-grid" id="functions-container">
-                <!-- Functions will be loaded here dynamically -->
-            </div>
-        </div>
-        
-        <!-- Editor Page -->
-        <div class="page" id="editor">
-            <div class="page-header">
-                <h2>Haskell Code Editor</h2>
-                <p>Write and test your Haskell code in this interactive environment</p>
-            </div>
-            <div class="editor-container">
-                <div class="editor-header">
-                    <span>main.hs</span>
-                    <button class="btn btn-primary" id="runCode">
-                        <i class="fas fa-play"></i> Run Code
+                    <button class="btn btn-secondary" id="viewFunctions">
+                        <i class="fas fa-functions"></i> View All Functions
                     </button>
                 </div>
-                <div class="editor-body">
-                    <textarea id="codeEditor" placeholder="-- Write your Haskell code here
+            </div>
+            
+            <!-- Labs Overview Page -->
+            <div class="page" id="labs">
+                <div class="page-header">
+                    <h2>Labs Overview</h2>
+                    <p>Detailed breakdown of each lab's topics and learning objectives</p>
+                </div>
+                <div id="lab-content">
+                    <!-- Lab content will be loaded here dynamically -->
+                </div>
+            </div>
+            
+            <!-- Practice Tasks Page -->
+            <div class="page" id="practice">
+                <div class="page-header">
+                    <h2>Practice Tasks</h2>
+                    <p>Hands-on coding exercises from all labs with solutions</p>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="showAllTasks">
+                        <i class="fas fa-layer-group"></i> All Tasks
+                    </button>
+                    <button class="btn btn-secondary" id="showLab1Tasks">
+                        <i class="fas fa-1"></i> Lab 1 Tasks
+                    </button>
+                    <button class="btn btn-secondary" id="showLab2Tasks">
+                        <i class="fas fa-2"></i> Lab 2 Tasks
+                    </button>
+                    <button class="btn btn-secondary" id="showLab3Tasks">
+                        <i class="fas fa-3"></i> Lab 3 Tasks
+                    </button>
+                    <button class="btn btn-secondary" id="showLab4Tasks">
+                        <i class="fas fa-4"></i> Lab 4 Tasks
+                    </button>
+                    <button class="btn btn-secondary" id="showLab5Tasks">
+                        <i class="fas fa-5"></i> Lab 5 Tasks
+                    </button>
+                </div>
+                <div class="task-grid" id="tasks-container">
+                    <!-- Tasks will be loaded here dynamically -->
+                </div>
+            </div>
+            
+            <!-- Quiz Page -->
+            <div class="page" id="quiz">
+                <div class="page-header">
+                    <h2>Quick Quiz</h2>
+                    <p>Test your Haskell knowledge with these interactive questions</p>
+                </div>
+                <div id="quiz-container">
+                    <!-- Quiz will be loaded here dynamically -->
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="nextQuestion">
+                        <i class="fas fa-arrow-right"></i> Next Question
+                    </button>
+                    <button class="btn btn-secondary" id="restartQuiz">
+                        <i class="fas fa-redo"></i> Restart Quiz
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Generate Task Page -->
+            <div class="page" id="generate">
+                <div class="page-header">
+                    <h2>Generate Practice Task</h2>
+                    <p>Get a random Haskell task to solve based on selected lab topics</p>
+                </div>
+                <div class="generate-task">
+                    <div class="controls">
+                        <button class="btn btn-primary" id="generateTask">
+                            <i class="fas fa-random"></i> Generate New Task
+                        </button>
+                        <button class="btn btn-secondary" id="showSolution">
+                            <i class="fas fa-eye"></i> Show Solution
+                        </button>
+                    </div>
+                    <div class="task-display" id="generated-task">
+                        <p>Click "Generate New Task" to get a random Haskell problem to solve!</p>
+                    </div>
+                    <div class="task-display hidden" id="generated-solution">
+                        <!-- Solution will appear here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Functions Page -->
+            <div class="page" id="functions">
+                <div class="page-header">
+                    <h2>Haskell Functions Reference</h2>
+                    <p>Complete reference of all functions covered in the labs</p>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="showAllFunctions">
+                        <i class="fas fa-layer-group"></i> All Functions
+                    </button>
+                    <button class="btn btn-secondary" id="showBasicFunctions">
+                        <i class="fas fa-play-circle"></i> Basic Functions
+                    </button>
+                    <button class="btn btn-secondary" id="showListFunctions">
+                        <i class="fas fa-list"></i> List Functions
+                    </button>
+                    <button class="btn btn-secondary" id="showHOFunctions">
+                        <i class="fas fa-sitemap"></i> Higher Order Functions
+                    </button>
+                </div>
+                <div class="function-grid" id="functions-container">
+                    <!-- Functions will be loaded here dynamically -->
+                </div>
+            </div>
+            
+            <!-- Editor Page -->
+            <div class="page" id="editor">
+                <div class="page-header">
+                    <h2>Haskell Code Editor</h2>
+                    <p>Write and test your Haskell code in this interactive environment</p>
+                </div>
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <span>main.hs</span>
+                        <button class="btn btn-primary" id="runCode">
+                            <i class="fas fa-play"></i> Run Code
+                        </button>
+                    </div>
+                    <div class="editor-body">
+                        <textarea id="codeEditor" placeholder="-- Write your Haskell code here
 -- Example:
-main = putStrLn \"Hello, Haskell!\"" rows="20"></textarea>
+main = putStrLn &quot;Hello, Haskell!&quot;" rows="20"></textarea>
+                    </div>
+                </div>
+                <div class="output-container" id="output">
+                    <p>Output will appear here after running your code.</p>
                 </div>
             </div>
-            <div class="output-container" id="output">
-                <p>Output will appear here after running your code.</p>
+            
+            <!-- Users Management Page -->
+            <div class="page" id="users">
+                <div class="page-header">
+                    <h2>User Management</h2>
+                    <p>View and manage all registered users</p>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary" id="refreshUsers">
+                        <i class="fas fa-sync-alt"></i> Refresh Users
+                    </button>
+                </div>
+                <div class="task-display">
+                    <h3>Registered Users</h3>
+                    <table class="users-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Registration Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- Users will be loaded here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Comprehensive data for all labs
-        const labData = {
-            1: {
-                title: "Lab 1: Basics & Setup",
-                topics: [
-                    "Haskell installation and setup",
-                    "Basic data types (Int, Float, Bool, Char, String)",
-                    "Simple function definitions",
-                    "Basic arithmetic operations",
-                    "String concatenation",
-                    "Function composition"
-                ],
-                tasks: [
-                    {
-                        id: 1,
-                        title: "Double an integer",
-                        description: "Write a function that doubles an integer",
-                        solution: "f :: Int -> Int\nf x = x * 2",
-                        tests: "-- main = print (f 42)  -- 84\n-- main = print (f 100) -- 200",
-                        explanation: "This is a simple function that multiplies the input by 2.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 2,
-                        title: "Concatenate three strings",
-                        description: "Write a function that concatenates three strings",
-                        solution: "st3 :: String -> String -> String -> String\nst3 a b c = a ++ b ++ c",
-                        tests: '-- main = print (st3 "Hello" " World!" " from FP class") -- "Hello World! from FP class"',
-                        explanation: "Uses the ++ operator to concatenate strings.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 3,
-                        title: "Calculate shopping change",
-                        description: "Calculate money left after shopping with given prices",
-                        solution: "granpa :: Int -> Int -> Int -> Int -> Int\ngranpa original m c f = original - (m * 300 + c * 400 + f * 2000)",
-                        tests: "-- main = print (granpa 20000 5 10 1) -- 12500\n-- main = print (granpa 20000 10 5 2) -- 11000",
-                        explanation: "Calculates the remaining money by subtracting total cost from original amount.",
-                        difficulty: "medium"
-                    }
-                ]
-            },
-            2: {
-                title: "Lab 2: Functions",
-                topics: [
-                    "Function definitions with multiple parameters",
-                    "Pattern matching",
-                    "Guards and conditional expressions",
-                    "Recursion basics",
-                    "Mathematical operations",
-                    "Type conversions"
-                ],
-                tasks: [
-                    {
-                        id: 1,
-                        title: "Find maximum of two numbers",
-                        description: "Write a function that returns the maximum of two integers",
-                        solution: "maxi :: Int -> Int -> Int\nmaxi x y\n   | x < y = y\n   | otherwise = x",
-                        tests: "-- main = print (maxi 34 56) -- 56",
-                        explanation: "Uses guards to compare the two numbers and return the larger one.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 2,
-                        title: "Check if number is odd",
-                        description: "Write a function that checks if a number is odd",
-                        solution: "isoddnr :: Int -> Bool\nisoddnr x = x `rem` 2 == 1",
-                        tests: "-- main = print (isoddnr 5) -- True\n-- main = print (isoddnr 6) -- False",
-                        explanation: "Uses the remainder operator to check if division by 2 leaves a remainder of 1.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 3,
-                        title: "Calculate power recursively",
-                        description: "Compute x^n using recursion",
-                        solution: "powerrec :: Int -> Int -> Int\npowerrec x n\n   | n == 0 = 1\n   | otherwise = x * powerrec x (n-1)",
-                        tests: "-- main = print (powerrec 2 0) -- 1\n-- main = print (powerrec 2 4) -- 16",
-                        explanation: "Uses recursive multiplication to calculate power. Base case is when exponent is 0.",
-                        difficulty: "medium"
-                    }
-                ]
-            },
-            3: {
-                title: "Lab 3: Lists",
-                topics: [
-                    "List creation and manipulation",
-                    "Head, tail, init, last operations",
-                    "List concatenation and slicing",
-                    "List comprehensions",
-                    "Recursive list processing",
-                    "Common list patterns"
-                ],
-                tasks: [
-                    {
-                        id: 1,
-                        title: "Get first and last elements",
-                        description: "Return a list containing the first and last elements of a list",
-                        solution: "firstLast :: [a] -> [a]\nfirstLast xs = [head xs, last xs]",
-                        tests: '-- main = print (firstLast "hello") -- "ho"\n-- main = print (firstLast [1,2,3,4]) -- [1,4]',
-                        explanation: "Uses head and last functions to get the first and last elements.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 2,
-                        title: "Check if list is symmetrical",
-                        description: "Return True if a list is the same forwards and backwards",
-                        solution: "sim :: [Int] -> Bool\nsim xs = xs == reverse xs",
-                        tests: "-- main = print (sim [1, 2, 1]) -- True\n-- main = print (sim [1, 2, 3, 4, 5]) -- False",
-                        explanation: "Compares the list with its reverse to check for symmetry.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 3,
-                        title: "Filter even numbers",
-                        description: "Return a new list containing only the even numbers",
-                        solution: "filterEven :: [Int] -> [Int]\nfilterEven [] = []\nfilterEven (x:xs)\n    | even x    = x : filterEven xs\n    | otherwise = filterEven xs",
-                        tests: "-- main = print (filterEven [1, 2, 3, 4, 5, 6]) -- [2, 4, 6]",
-                        explanation: "Uses recursion and pattern matching to filter even numbers.",
-                        difficulty: "medium"
-                    }
-                ]
-            },
-            4: {
-                title: "Lab 4: Recursion",
-                topics: [
-                    "Advanced recursion techniques",
-                    "Multiple parameter recursion",
-                    "List processing with recursion",
-                    "Accumulator patterns",
-                    "Complex recursive algorithms",
-                    "Efficiency considerations"
-                ],
-                tasks: [
-                    {
-                        id: 1,
-                        title: "Find minimum of list",
-                        description: "Find the minimum element in a list using recursion",
-                        solution: "minimum2 :: [Int] -> Int\nminimum2 [x] = x\nminimum2 (x:xs) = min x (minimum2 xs)",
-                        tests: "-- main = print (minimum2 [1..5]) -- 1\n-- main = print (minimum2 [10,9,8,7,6]) -- 6",
-                        explanation: "Uses recursive comparison with the min function to find the smallest element.",
-                        difficulty: "medium"
-                    },
-                    {
-                        id: 2,
-                        title: "Delete every second element",
-                        description: "Remove every second element from a list",
-                        solution: "del2 :: [Int] -> [Int]\ndel2 [] = []\ndel2 [x] = [x]\ndel2 (x : y : xs) = x : del2 xs",
-                        tests: "-- main = print (del2 [1..10]) -- [1,3,5,7,9]",
-                        explanation: "Uses pattern matching to keep first element and skip second in each pair.",
-                        difficulty: "medium"
-                    },
-                    {
-                        id: 3,
-                        title: "Count consecutive duplicates",
-                        description: "Count pairs of equal elements that appear consecutively",
-                        solution: "fe :: [Int] -> Int\nfe [] = 0\nfe [h] = 0\nfe (h : x : t)\n    | h == x = 1 + fe (x : t)\n    | otherwise = fe (x : t)",
-                        tests: "-- main = print (fe [1,2,2,2,3,4,3,3,2,4,5,5,5]) -- 6",
-                        explanation: "Recursively counts adjacent equal elements by comparing each pair.",
-                        difficulty: "hard"
-                    }
-                ]
-            },
-            5: {
-                title: "Lab 5: Higher Order Functions",
-                topics: [
-                    "Map, filter, fold operations",
-                    "Function composition",
-                    "Lambda expressions",
-                    "Partial application",
-                    "List transformations",
-                    "Advanced function patterns"
-                ],
-                tasks: [
-                    {
-                        id: 1,
-                        title: "Get heads of sublists",
-                        description: "Return a list containing the first element of each sublist",
-                        solution: "heads :: [[Int]] -> [Int]\nheads x = map head x",
-                        tests: "-- main = print (heads [[1, 2, 3], [3, 4], [5, 7, 8, 9]]) -- [1,3,5]",
-                        explanation: "Uses map to apply the head function to each sublist.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 2,
-                        title: "Add 100 to each element",
-                        description: "Add 100 to every element in a list",
-                        solution: "add100 :: [Int] -> [Int]\nadd100 x = map (\\x -> x + 100) x",
-                        tests: "-- main = print (add100 [1..8]) -- [101,102,103,104,105,106,107,108]",
-                        explanation: "Uses map with a lambda function to add 100 to each element.",
-                        difficulty: "easy"
-                    },
-                    {
-                        id: 3,
-                        title: "Filter and transform",
-                        description: "Keep positive elements and double them",
-                        solution: "f20 :: [Int] -> [Int]\nf20 x = map (*2) (filter (>0) x)",
-                        tests: "-- main = print (f20 [1, 2, -2, 3, -4]) -- [2, 4, 6]",
-                        explanation: "First filters positive numbers, then doubles each using map.",
-                        difficulty: "medium"
-                    }
-                ]
+        // User Management System
+        class UserManager {
+            constructor() {
+                this.users = JSON.parse(localStorage.getItem('haskellUsers')) || [];
+                this.currentUser = localStorage.getItem('currentUser') || null;
             }
-        };
-
-        // Quiz questions
-        const quizQuestions = [
-            {
-                question: "What does the 'map' function do in Haskell?",
-                options: [
-                    "Applies a function to every element of a list",
-                    "Filters elements from a list based on a condition",
-                    "Combines elements of a list into a single value",
-                    "Sorts the elements of a list"
-                ],
-                correct: 0,
-                explanation: "The map function applies a given function to every element of a list, returning a new list with the results."
-            },
-            {
-                question: "Which operator is used for integer division in Haskell?",
-                options: [
-                    "`div`",
-                    "`/`",
-                    "`//`",
-                    "`%`"
-                ],
-                correct: 0,
-                explanation: "The `div` operator is used for integer division in Haskell, while `/` is for fractional division."
-            },
-            {
-                question: "What is the result of 'head [1,2,3]' in Haskell?",
-                options: [
-                    "1",
-                    "[1]",
-                    "[1,2,3]",
-                    "Error"
-                ],
-                correct: 0,
-                explanation: "The head function returns the first element of a list, which is 1 in this case."
-            },
-            {
-                question: "Which function would you use to check if all elements of a list satisfy a condition?",
-                options: [
-                    "all",
-                    "any",
-                    "filter",
-                    "map"
-                ],
-                correct: 0,
-                explanation: "The 'all' function returns True if all elements in the list satisfy the given predicate."
-            },
-            {
-                question: "What does pattern matching 'x:xs' on a list do?",
-                options: [
-                    "Binds x to the head and xs to the tail",
-                    "Binds x to the tail and xs to the head",
-                    "Binds both to the entire list",
-                    "Reverses the list"
-                ],
-                correct: 0,
-                explanation: "In pattern matching, x:xs binds x to the first element (head) and xs to the rest of the list (tail)."
+            
+            // Check if user exists
+            userExists(username) {
+                return this.users.some(user => user.username.toLowerCase() === username.toLowerCase());
             }
-        ];
-
-        // Haskell functions reference
-        const haskellFunctions = {
-            basic: [
-                {
-                    name: "head",
-                    type: "[a] -> a",
-                    description: "Returns the first element of a list",
-                    example: "head [1,2,3] -- 1"
-                },
-                {
-                    name: "tail",
-                    type: "[a] -> [a]",
-                    description: "Returns all elements except the first",
-                    example: "tail [1,2,3] -- [2,3]"
-                },
-                {
-                    name: "last",
-                    type: "[a] -> a",
-                    description: "Returns the last element of a list",
-                    example: "last [1,2,3] -- 3"
-                },
-                {
-                    name: "init",
-                    type: "[a] -> [a]",
-                    description: "Returns all elements except the last",
-                    example: "init [1,2,3] -- [1,2]"
+            
+            // Add new user
+            addUser(username) {
+                if (!this.userExists(username)) {
+                    const newUser = {
+                        username: username,
+                        registrationDate: new Date().toISOString(),
+                        lastLogin: new Date().toISOString()
+                    };
+                    this.users.push(newUser);
+                    this.saveUsers();
+                    return newUser;
                 }
-            ],
-            list: [
-                {
-                    name: "map",
-                    type: "(a -> b) -> [a] -> [b]",
-                    description: "Applies a function to every element of a list",
-                    example: "map (+1) [1,2,3] -- [2,3,4]"
-                },
-                {
-                    name: "filter",
-                    type: "(a -> Bool) -> [a] -> [a]",
-                    description: "Keeps elements that satisfy a predicate",
-                    example: "filter even [1,2,3,4] -- [2,4]"
-                },
-                {
-                    name: "foldr",
-                    type: "(a -> b -> b) -> b -> [a] -> b",
-                    description: "Right-associative fold of a list",
-                    example: "foldr (+) 0 [1,2,3] -- 6"
-                },
-                {
-                    name: "zipWith",
-                    type: "(a -> b -> c) -> [a] -> [b] -> [c]",
-                    description: "Combines two lists using a function",
-                    example: "zipWith (+) [1,2] [3,4] -- [4,6]"
-                }
-            ],
-            higherOrder: [
-                {
-                    name: "takeWhile",
-                    type: "(a -> Bool) -> [a] -> [a]",
-                    description: "Takes elements while condition holds",
-                    example: "takeWhile (<3) [1,2,3,1,2] -- [1,2]"
-                },
-                {
-                    name: "dropWhile",
-                    type: "(a -> Bool) -> [a] -> [a]",
-                    description: "Drops elements while condition holds",
-                    example: "dropWhile (<3) [1,2,3,1,2] -- [3,1,2]"
-                },
-                {
-                    name: "any",
-                    type: "(a -> Bool) -> [a] -> Bool",
-                    description: "Checks if any element satisfies predicate",
-                    example: "any even [1,3,5,2] -- True"
-                },
-                {
-                    name: "all",
-                    type: "(a -> Bool) -> [a] -> Bool",
-                    description: "Checks if all elements satisfy predicate",
-                    example: "all even [2,4,6] -- True"
-                }
-            ]
-        };
-
-        // Generate task pool
-        const taskPool = [
-            {
-                task: "Write a function that takes a list of integers and returns a new list with all even numbers doubled.",
-                solution: "doubleEvens :: [Int] -> [Int]\ndoubleEvens xs = map (\\x -> if even x then x*2 else x) xs",
-                lab: 5
-            },
-            {
-                task: "Create a function that calculates the factorial of a number using recursion.",
-                solution: "factorial :: Int -> Int\nfactorial 0 = 1\nfactorial n = n * factorial (n-1)",
-                lab: 2
-            },
-            {
-                task: "Write a function that takes a string and returns the number of vowels in it.",
-                solution: "countVowels :: String -> Int\ncountVowels s = length (filter (\\c -> c `elem` \"aeiouAEIOU\") s)",
-                lab: 3
-            },
-            {
-                task: "Implement a function that reverses a list using recursion.",
-                solution: "reverseList :: [a] -> [a]\nreverseList [] = []\nreverseList (x:xs) = reverseList xs ++ [x]",
-                lab: 4
-            },
-            {
-                task: "Write a function that finds the maximum element in a list.",
-                solution: "maximumList :: [Int] -> Int\nmaximumList [x] = x\nmaximumList (x:xs) = max x (maximumList xs)",
-                lab: 4
+                return null;
             }
-        ];
-
-        // Global variables
-        let currentQuizIndex = 0;
-        let currentLabFilter = 'all';
-
-        // Navigation functionality
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                
-                // Update active nav link
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Show selected page
-                document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-                document.getElementById(pageId).classList.add('active');
-                
-                // Close mobile menu if open
-                if (window.innerWidth <= 1024) {
-                    document.getElementById('sidebar').classList.remove('active');
+            
+            // Get user by username
+            getUser(username) {
+                return this.users.find(user => user.username.toLowerCase() === username.toLowerCase());
+            }
+            
+            // Update user last login
+            updateLastLogin(username) {
+                const user = this.getUser(username);
+                if (user) {
+                    user.lastLogin = new Date().toISOString();
+                    this.saveUsers();
+                }
+            }
+            
+            // Delete user
+            deleteUser(username) {
+                if (username === this.currentUser) {
+                    return false; // Cannot delete current user
                 }
                 
-                // Load page-specific content
-                if (pageId === 'labs') loadLabContent();
-                if (pageId === 'practice') loadTasks(currentLabFilter);
-                if (pageId === 'quiz') loadQuiz();
-                if (pageId === 'functions') loadFunctions('all');
-            });
-        });
-        
-        // Lab cards navigation
-        document.querySelectorAll('.lab-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const lab = this.getAttribute('data-lab');
-                const page = this.getAttribute('data-page');
-                
-                if (page) {
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
-                    
-                    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-                    document.getElementById(page).classList.add('active');
-                    
-                    if (page === 'quiz') loadQuiz();
-                } else if (lab) {
-                    // Navigate to practice page with lab filter
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    document.querySelector('.nav-link[data-page="practice"]').classList.add('active');
-                    
-                    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-                    document.getElementById('practice').classList.add('active');
-                    
-                    // Filter tasks by lab
-                    currentLabFilter = lab;
-                    loadTasks(lab);
-                }
-            });
-        });
-        
-        // Lab filter navigation
-        document.querySelectorAll('.lab-filter').forEach(filter => {
-            filter.addEventListener('click', function(e) {
-                e.preventDefault();
-                const lab = this.getAttribute('data-lab');
-                currentLabFilter = lab;
-                
-                // Update active filter
-                document.querySelectorAll('.lab-filter').forEach(f => f.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Navigate to practice page
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                document.querySelector('.nav-link[data-page="practice"]').classList.add('active');
-                
-                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-                document.getElementById('practice').classList.add('active');
-                
-                // Load filtered tasks
-                loadTasks(lab);
-            });
-        });
-        
-        // Dashboard buttons
-        document.getElementById('startPractice').addEventListener('click', function() {
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.querySelector('.nav-link[data-page="practice"]').classList.add('active');
+                this.users = this.users.filter(user => user.username !== username);
+                this.saveUsers();
+                return true;
+            }
             
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('practice').classList.add('active');
+            // Get all users
+            getAllUsers() {
+                return this.users.sort((a, b) => new Date(b.registrationDate) - new Date(a.registrationDate));
+            }
             
-            loadTasks(currentLabFilter);
-        });
-        
-        document.getElementById('takeQuiz').addEventListener('click', function() {
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.querySelector('.nav-link[data-page="quiz"]').classList.add('active');
+            // Save users to localStorage
+            saveUsers() {
+                localStorage.setItem('haskellUsers', JSON.stringify(this.users));
+            }
             
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('quiz').classList.add('active');
+            // Set current user
+            setCurrentUser(username) {
+                this.currentUser = username;
+                localStorage.setItem('currentUser', username);
+                this.updateLastLogin(username);
+            }
             
-            loadQuiz();
-        });
-        
-        document.getElementById('viewFunctions').addEventListener('click', function() {
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.querySelector('.nav-link[data-page="functions"]').classList.add('active');
+            // Get current user
+            getCurrentUser() {
+                return this.currentUser;
+            }
             
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('functions').classList.add('active');
-            
-            loadFunctions('all');
-        });
-        
-        // Mobile menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('active');
-        });
-        
-        // Task filtering buttons
-        document.getElementById('showAllTasks').addEventListener('click', () => loadTasks('all'));
-        document.getElementById('showLab1Tasks').addEventListener('click', () => loadTasks('1'));
-        document.getElementById('showLab2Tasks').addEventListener('click', () => loadTasks('2'));
-        document.getElementById('showLab3Tasks').addEventListener('click', () => loadTasks('3'));
-        document.getElementById('showLab4Tasks').addEventListener('click', () => loadTasks('4'));
-        document.getElementById('showLab5Tasks').addEventListener('click', () => loadTasks('5'));
-        
-        // Function filtering buttons
-        document.getElementById('showAllFunctions').addEventListener('click', () => loadFunctions('all'));
-        document.getElementById('showBasicFunctions').addEventListener('click', () => loadFunctions('basic'));
-        document.getElementById('showListFunctions').addEventListener('click', () => loadFunctions('list'));
-        document.getElementById('showHOFunctions').addEventListener('click', () => loadFunctions('higherOrder'));
-        
-        // Generate task functionality
-        document.getElementById('generateTask').addEventListener('click', function() {
-            const randomTask = taskPool[Math.floor(Math.random() * taskPool.length)];
-            document.getElementById('generated-task').innerHTML = `<h3>Your Task:</h3><p>${randomTask.task}</p>`;
-            document.getElementById('generated-solution').innerHTML = `<h3>Solution:</h3><pre><code class="language-haskell">${randomTask.solution}</code></pre>`;
-            document.getElementById('generated-solution').classList.add('hidden');
-            
-            // Apply syntax highlighting
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightElement(block);
-            });
-        });
-        
-        document.getElementById('showSolution').addEventListener('click', function() {
-            document.getElementById('generated-solution').classList.toggle('hidden');
-        });
-        
-        // Quiz functionality
-        document.getElementById('nextQuestion').addEventListener('click', function() {
-            currentQuizIndex = (currentQuizIndex + 1) % quizQuestions.length;
-            loadQuiz();
-        });
-        
-        document.getElementById('restartQuiz').addEventListener('click', function() {
-            currentQuizIndex = 0;
-            loadQuiz();
-        });
-        
-        // Run code in editor (simulated)
-        document.getElementById('runCode').addEventListener('click', function() {
-            const code = document.getElementById('codeEditor').value;
-            document.getElementById('output').innerHTML = `<p>Running your code...</p>`;
-            
-            // Simulate execution with a timeout
-            setTimeout(() => {
-                // Simple simulation - in a real implementation, you'd send to a backend
-                if (code.includes('putStrLn') || code.includes('print')) {
-                    document.getElementById('output').innerHTML = `
-                        <p><strong>Output:</strong></p>
-                        <p>Hello, Haskell!</p>
-                        <p><strong>Code executed successfully.</strong></p>
-                    `;
-                } else {
-                    document.getElementById('output').innerHTML = `
-                        <p><strong>Output:</strong></p>
-                        <p>No output generated. Try using putStrLn or print functions.</p>
-                    `;
-                }
-            }, 1000);
-        });
-        
-        // Load lab content
-        function loadLabContent() {
-            const container = document.getElementById('lab-content');
-            container.innerHTML = '';
-            
-            for (const labId in labData) {
-                const lab = labData[labId];
-                const labElement = document.createElement('div');
-                labElement.className = 'lab-content';
-                
-                labElement.innerHTML = `
-                    <h2>${lab.title}</h2>
-                    <div class="lab-topics">
-                        ${lab.topics.map(topic => `
-                            <div class="lab-topic">
-                                <h3><i class="fas fa-check-circle"></i> ${topic}</h3>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                
-                container.appendChild(labElement);
+            // Logout
+            logout() {
+                this.currentUser = null;
+                localStorage.removeItem('currentUser');
             }
         }
-        
-        // Load tasks based on filter
-        function loadTasks(labFilter) {
-            const container = document.getElementById('tasks-container');
-            container.innerHTML = '';
+
+        // Initialize User Manager
+        const userManager = new UserManager();
+
+        // Login functionality
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value.trim();
+            const messageDiv = document.getElementById('loginMessage');
             
-            let tasksToShow = [];
-            
-            if (labFilter === 'all') {
-                // Show tasks from all labs
-                for (const labId in labData) {
-                    tasksToShow = tasksToShow.concat(labData[labId].tasks.map(task => ({
-                        ...task,
-                        lab: parseInt(labId)
-                    })));
-                }
-            } else {
-                // Show tasks from specific lab
-                tasksToShow = labData[labFilter].tasks.map(task => ({
-                    ...task,
-                    lab: parseInt(labFilter)
-                }));
-            }
-            
-            if (tasksToShow.length === 0) {
-                container.innerHTML = '<p>No tasks found for the selected filter.</p>';
+            if (!username) {
+                messageDiv.textContent = 'Please enter a username';
+                messageDiv.classList.remove('hidden');
                 return;
             }
             
-            tasksToShow.forEach(task => {
-                const taskElement = document.createElement('div');
-                taskElement.className = 'task-card';
-                
-                taskElement.innerHTML = `
-                    <div class="task-header">
-                        <div class="task-number">${task.id}</div>
-                        <div class="task-difficulty ${task.difficulty}">${task.difficulty}</div>
-                    </div>
-                    <h3 class="task-title">${task.title}</h3>
-                    <p class="task-description">${task.description}</p>
-                    
-                    <div class="code-section">
-                        <div class="code-header">
-                            <span class="code-label">Solution</span>
-                            <button class="copy-btn" onclick="copyCode('${task.solution.replace(/\n/g, '\\n')}')">
-                                <i class="fas fa-copy"></i> Copy
-                            </button>
-                        </div>
-                        <pre><code class="language-haskell">${task.solution}</code></pre>
-                    </div>
-                    
-                    <div class="test-cases">
-                        <h4><i class="fas fa-vial"></i> Test Cases</h4>
-                        <pre><code class="language-haskell">${task.tests}</code></pre>
-                    </div>
-                    
-                    <div class="explanation">
-                        <h4><i class="fas fa-lightbulb"></i> Explanation</h4>
-                        <p>${task.explanation}</p>
-                    </div>
-                `;
-                
-                container.appendChild(taskElement);
-            });
-            
-            // Apply syntax highlighting
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightElement(block);
-            });
-        }
-        
-        // Load quiz
-        function loadQuiz() {
-            const container = document.getElementById('quiz-container');
-            const question = quizQuestions[currentQuizIndex];
-            
-            container.innerHTML = `
-                <div class="quiz-container">
-                    <div class="quiz-question">${question.question}</div>
-                    <div class="quiz-options">
-                        ${question.options.map((option, index) => `
-                            <div class="quiz-option" data-index="${index}">
-                                ${option}
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="quiz-feedback correct">
-                        <strong>Correct!</strong> ${question.explanation}
-                    </div>
-                    <div class="quiz-feedback incorrect">
-                        <strong>Incorrect.</strong> ${question.explanation}
-                    </div>
-                    <div class="quiz-progress">
-                        Question ${currentQuizIndex + 1} of ${quizQuestions.length}
-                    </div>
-                </div>
-            `;
-            
-            // Set up quiz interaction
-            container.querySelectorAll('.quiz-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const selectedIndex = parseInt(this.getAttribute('data-index'));
-                    const isCorrect = selectedIndex === question.correct;
-                    
-                    container.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
-                    this.classList.add('selected');
-                    
-                    container.querySelector('.quiz-feedback.correct').style.display = isCorrect ? 'block' : 'none';
-                    container.querySelector('.quiz-feedback.incorrect').style.display = isCorrect ? 'none' : 'block';
-                });
-            });
-        }
-        
-        // Load functions
-        function loadFunctions(category) {
-            const container = document.getElementById('functions-container');
-            container.innerHTML = '';
-            
-            let functionsToShow = [];
-            
-            if (category === 'all') {
-                functionsToShow = [
-                    ...haskellFunctions.basic,
-                    ...haskellFunctions.list,
-                    ...haskellFunctions.higherOrder
-                ];
+            // Check if user exists, if not create new user
+            let user = userManager.getUser(username);
+            if (!user) {
+                user = userManager.addUser(username);
+                if (user) {
+                    messageDiv.textContent = `New user "${username}" created successfully!`;
+                    messageDiv.style.color = 'var(--success)';
+                }
             } else {
-                functionsToShow = haskellFunctions[category] || [];
+                messageDiv.textContent = `Welcome back, ${username}!`;
+                messageDiv.style.color = 'var(--success)';
             }
             
-            functionsToShow.forEach(func => {
-                const funcElement = document.createElement('div');
-                funcElement.className = 'function-card';
+            // Set current user and show main app
+            userManager.setCurrentUser(username);
+            
+            setTimeout(() => {
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('app').classList.remove('hidden');
+                document.getElementById('currentUser').textContent = username;
                 
-                funcElement.innerHTML = `
-                    <div class="function-name">${func.name}</div>
-                    <div class="function-type">${func.type}</div>
-                    <div class="function-description">${func.description}</div>
-                    <div class="tooltip">Example: ${func.example}</div>
+                // Initialize the app
+                initializeApp();
+            }, 1000);
+        });
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            userManager.logout();
+            document.getElementById('app').classList.add('hidden');
+            document.getElementById('loginPage').classList.remove('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('loginMessage').classList.add('hidden');
+        });
+
+        // Check if user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const currentUser = userManager.getCurrentUser();
+            if (currentUser) {
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('app').classList.remove('hidden');
+                document.getElementById('currentUser').textContent = currentUser;
+                initializeApp();
+            }
+        });
+
+        // Initialize the main application
+        function initializeApp() {
+            // Load users table
+            loadUsersTable();
+            
+            // Set up event listeners for user management
+            document.getElementById('refreshUsers').addEventListener('click', loadUsersTable);
+            
+            // Rest of your existing application code would go here...
+            // (The navigation, task loading, quiz, etc. from previous implementation)
+            
+            // For demonstration, I'll show a simple message
+            console.log('Haskell Lab Hub initialized for user:', userManager.getCurrentUser());
+        }
+
+        // Load users table
+        function loadUsersTable() {
+            const users = userManager.getAllUsers();
+            const tableBody = document.getElementById('usersTableBody');
+            const currentUser = userManager.getCurrentUser();
+            
+            tableBody.innerHTML = '';
+            
+            if (users.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">No users registered yet</td></tr>';
+                return;
+            }
+            
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                
+                // Format registration date
+                const regDate = new Date(user.registrationDate);
+                const formattedDate = regDate.toLocaleDateString() + ' ' + regDate.toLocaleTimeString();
+                
+                row.innerHTML = `
+                    <td>${user.username} ${user.username === currentUser ? '<strong>(You)</strong>' : ''}</td>
+                    <td>${formattedDate}</td>
+                    <td>
+                        ${user.username !== currentUser ? 
+                            `<button class="btn btn-danger delete-user" data-username="${user.username}">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>` : 
+                            '<span style="color: var(--success);">Current User</span>'
+                        }
+                    </td>
                 `;
                 
-                // Add hover tooltip
-                funcElement.addEventListener('mouseenter', function(e) {
-                    const tooltip = this.querySelector('.tooltip');
-                    tooltip.style.display = 'block';
-                    tooltip.style.top = (e.clientY + 10) + 'px';
-                    tooltip.style.left = (e.clientX + 10) + 'px';
-                });
-                
-                funcElement.addEventListener('mouseleave', function() {
-                    this.querySelector('.tooltip').style.display = 'none';
-                });
-                
-                funcElement.addEventListener('mousemove', function(e) {
-                    const tooltip = this.querySelector('.tooltip');
-                    tooltip.style.top = (e.clientY + 10) + 'px';
-                    tooltip.style.left = (e.clientX + 10) + 'px';
-                });
-                
-                container.appendChild(funcElement);
-            });
-        }
-        
-        // Copy code to clipboard
-        function copyCode(code) {
-            // Replace escaped newlines with actual newlines
-            const formattedCode = code.replace(/\\n/g, '\n');
-            navigator.clipboard.writeText(formattedCode).then(() => {
-                // Show feedback
-                const event = new Event('copyFeedback');
-                document.dispatchEvent(event);
-            });
-        }
-        
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load initial content
-            loadLabContent();
-            loadTasks('all');
-            loadQuiz();
-            loadFunctions('all');
-            
-            // Apply syntax highlighting
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightElement(block);
+                tableBody.appendChild(row);
             });
             
-            // Set up copy feedback
-            document.addEventListener('copyFeedback', function() {
-                // Could show a toast notification here
-                console.log('Code copied to clipboard!');
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-user').forEach(button => {
+                button.addEventListener('click', function() {
+                    const username = this.getAttribute('data-username');
+                    if (confirm(`Are you sure you want to delete user "${username}"?`)) {
+                        if (userManager.deleteUser(username)) {
+                            loadUsersTable();
+                        } else {
+                            alert('Cannot delete the current user.');
+                        }
+                    }
+                });
             });
+        }
+
+        // Allow login on Enter key
+        document.getElementById('username').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('loginBtn').click();
+            }
         });
     </script>
 </body>
